@@ -1,0 +1,32 @@
+.navigation-toggle line {
+  transition-property: transform;
+  transition-timing-function: ease-in-out;
+  transition-duration: 200ms;
+}
+
+.navigation-toggle line.top {
+  transform-origin: 216px 64px;
+}
+
+.navigation-toggle line.middle {
+  transform-origin: center;
+  transition-duration: 200ms;
+  transition-delay: 50ms;
+}
+
+.navigation-toggle line.bottom {
+  transform-origin: 216px 192px;
+}
+
+.navigation-toggle.open line.top {
+  transform: rotate(-45deg);
+}
+
+.navigation-toggle.open line.middle {
+  transform: scale(0);
+  transition-delay: 0ms;
+}
+
+.navigation-toggle.open line.bottom {
+  transform: rotate(45deg);
+}

@@ -1,0 +1,28 @@
+.form-input {
+	@apply appearance-none w-full px-3 py-2 block
+		   rounded-md border border-base-medium
+		   bg-base-high text-alt-high text-sm leading-normal
+		   shadow transition-colors;
+}
+
+.form-input:focus-visible {
+	@apply outline outline-1 outline-accent-primary;
+}
+
+.form-checkbox {
+	@apply select-none w-4 h-4
+		   inline-flex align-middle shrink-0
+		   text-alt-low bg-origin-border;
+
+	print-color-adjust: exact;
+}
+
+.btn {
+	@apply inline-block px-8 py-2 align-middle rounded-md font-medium text-center
+		   cursor-pointer select-none
+		   will-change-transform active:translate-y-px transition;
+}
+
+.btn-link {
+	@apply w-1/2 text-sm px-3 py-1 hover:bg-orange-400/40 hover:text-alt-high;
+}

@@ -1,0 +1,6 @@
+Link currently selected filters to page URL.
+Add links in the home page (through setting file) to the shop page with filters already set.
+Create a "combine filters" utility.
+Show product card placeholders until products are loaded.
+Show a message stating that no items meet the filter.
+TODO Create a data store where the virtual shopping cart can be stored.

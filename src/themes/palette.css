@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base
+{
+	/*
+	 * Light theme colors
+	 */
+	:root {
+ 		--base-color:       255 255 255;
+
+ 		--base-high:        #FFFFFF;
+		--base-medium-high: #F4F4F5;
+		--base-medium:      #E4E4E7;
+		--base-medium-low:  #D4D4D8;
+		--base-low:         #A1A1AA;
+
+ 		--alt-color:        0 0 0;
+		--alt-high:         #000000;
+		--alt-medium-high:  #18181B;
+		--alt-medium:       #27272A;
+		--alt-medium-low:   #3F3F46;
+		--alt-low:          #52525B;
+
+		--accent-color-primary:   #F9942A;
+		--accent-color-secondary: #F97316;
+	}
+
+	/*
+	 * Dark theme colors
+	 */
+	:root.dark,
+	:root:not(.light) {
+ 		--base-color:       0 0 0;
+
+ 		--base-high:        #000000;
+		--base-medium-high: #18181B;
+		--base-medium:      #27272A;
+		--base-medium-low:  #3F3F46;
+		--base-low:         #52525B;
+
+ 		--alt-color:        255 255 255;
+		--alt-high:         #FFFFFF;
+		--alt-medium-high:  #F4F4F5;
+		--alt-medium:       #E4E4E7;
+		--alt-medium-low:   #D4D4D8;
+		--alt-low:          #A1A1AA;
+
+		--accent-color-primary:   #F9942A;
+		--accent-color-secondary: #F97316;
+	}
+}
