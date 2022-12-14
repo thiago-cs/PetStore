@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "http://thiago-cs.github.io/PetStore",
   "scripts": {
     "dev": "vite --config config/vite.config.ts",
     "build": "tsc && vite build --config config/vite.config.ts --base=/PetStore/",
