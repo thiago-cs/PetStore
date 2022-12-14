@@ -5,15 +5,16 @@ import { ProductTag } from "models/ProductTag";
 import { sleep } from "utils/sleep";
 
 
+/**
+ * This is a mock-up that simulates an API backend.
+ * A few hacks here and there are exceptionally allowed here.
+ */
+
 export const myApi =
 {
 	async getProductsAsync(): Promise<Product[]>
 	{
 		await sleep(1500);
-
-		for (const item of products)
-			for (let i = 0; i < item.images.length; i++)
-				item.images[i] = getImageUrl(item.images[i]);
 
 		return products;
 	},
@@ -21,36 +22,17 @@ export const myApi =
 	async getTopBrandsAsync(): Promise<Brand[]>
 	{
 		await sleep(1500);
-		const copy = brands.slice(0, 5);
 
-		for (const item of copy)
-			item.image = getImageUrl(item.image);
-
-		return copy;
+		return brands.slice(0, 5);
 	},
 
 	async getOffersAsync(): Promise<Offer[]>
 	{
 		await sleep(1500);
-		const copy = offers.map(item => ({...item}));
 
-		for (const item of copy)
-			item.image = getImageUrl(item.image);
-
-		return copy;
+		return offers;
 	},
 };
-
-console.log("base url:", import.meta.url);
-
-function getImageUrl(path: string): string
-{
-	if (path.startsWith("http"))
-		return path;
-
-	const filePath = `/images/${path}`;
-	return new URL(filePath, import.meta.url).href;
-}
 
 
 const products: Product[] =
@@ -175,3 +157,24 @@ const offers: Offer[] =
 		image: "offers/offer-banner-3.jpg",
 	},
 ];
+
+
+prefixAllImageUrl();
+
+function prefixAllImageUrl(): void
+{
+	for (const item of products)
+		item.images = item.images.map(prefixImageUrl);
+
+	for (const item of brands)
+		item.image = prefixImageUrl(item.image);
+
+	for (const item of offers)
+		item.image = prefixImageUrl(item.image);
+
+
+	function prefixImageUrl(path: string): string
+	{
+		return import.meta.env.BASE_URL + "images/" + path;
+	}
+}
