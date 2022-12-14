@@ -12,7 +12,6 @@ export default defineConfig(
       models: "/src/models",
       assets: "/src/assets",
       utils: "/src/utils",
-      "~": "/src",
     },
   },
   plugins: [ reactPlugin() ],
