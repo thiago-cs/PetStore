@@ -17,7 +17,7 @@ type Function<T> = (...args: any[]) => T;
  */
 export function debounce<T>(func: Function<T>, interval = 300) : Function<void>
 {
-	let timeoutId: number;
+	let timeoutId: NodeJS.Timeout;
 
 	return function(this: any, ...args: any[])
 	{
