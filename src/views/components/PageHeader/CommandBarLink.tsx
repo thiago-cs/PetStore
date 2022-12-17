@@ -1,8 +1,8 @@
-import { Action } from "models/Action";
+import { Action } from "@/models/Action";
 import { ReactNode } from "react";
 import { Link } from "react-router-dom";
 
-import { Icon } from "views/icons";
+import { Icon } from "@/views/icons";
 
 
 export function CommandBarLink(props: CommandBarLinkProps): JSX.Element

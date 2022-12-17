@@ -1,5 +1,5 @@
 import { createRef, useLayoutEffect } from "react";
-import { Action } from "models/Action";
+import { Action } from "@/models/Action";
 
 
 export function HTMLComment(props: HTMLCommentProps): JSX.Element

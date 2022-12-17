@@ -2,15 +2,15 @@ import { useLocation } from "react-router-dom";
 
 import { NavigationToggle } from "./NavigationToggle";
 import { CommandBarLink } from "./CommandBarLink";
-import { AcrylicPanel } from "views/panels/AcrylicPanel";
-import { CompanyLogo } from "views/components/CompanyLogo";
-import { PageLink } from "views/components/PageHeader/PageLink";
-import { CommandBarButton } from "views/components/PageHeader/CommandBarButton";
-import { ThemeToggleButton } from "views/components/PageHeader/ThemeToggleButton";
-import { InfoBadge } from "views/components/InfoBadge";
-import { HTMLComment } from "views/devComponents/HTMLComment";
-import { Search, User, Shop, } from "views/icons";
-import { useToggle } from "utils/useToggle";
+import { AcrylicPanel } from "@/views/panels/AcrylicPanel";
+import { CompanyLogo } from "@/views/components/CompanyLogo";
+import { PageLink } from "@/views/components/PageHeader/PageLink";
+import { CommandBarButton } from "@/views/components/PageHeader/CommandBarButton";
+import { ThemeToggleButton } from "@/views/components/PageHeader/ThemeToggleButton";
+import { InfoBadge } from "@/views/components/InfoBadge";
+import { HTMLComment } from "@/views/devComponents/HTMLComment";
+import { Search, User, Shop, } from "@/views/icons";
+import { useToggle } from "@/utils/useToggle";
 
 
 

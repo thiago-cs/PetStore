@@ -3,9 +3,9 @@ import { Carousel, CarouselStylesNames } from "@mantine/carousel";
 import { CarouselStylesParams } from "@mantine/carousel/lib/Carousel.styles";
 import { CarouselBreakpoint } from "@mantine/carousel/lib/types";
 
-import { BrandCard } from "views/sections/TopBrandsSection/BrandCard";
-import { DuoToneHeader } from "views/components/DuoToneHeader";
-import { useTopBrands } from "utils/useTopBrands";
+import { BrandCard } from "@/views/sections/TopBrandsSection/BrandCard";
+import { DuoToneHeader } from "@/views/components/DuoToneHeader";
+import { useTopBrands } from "@/utils/useTopBrands";
 
 
 export function TopBrandsSection(): JSX.Element

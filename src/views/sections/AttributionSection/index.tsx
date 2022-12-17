@@ -1,6 +1,6 @@
-import { DuoToneHeader } from "views/components/DuoToneHeader";
-import { OpenInNewTab } from "views/icons";
-import { settings } from "../../../settings";
+import { DuoToneHeader } from "@/views/components/DuoToneHeader";
+import { OpenInNewTab } from "@/views/icons";
+import { settings } from "@/settings";
 
 
 export function AttributionSection(): JSX.Element

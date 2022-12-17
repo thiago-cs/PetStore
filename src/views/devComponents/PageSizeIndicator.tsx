@@ -1,6 +1,6 @@
-import useWindowSize from "utils/useWindowSize";
+import useWindowSize from "@/utils/useWindowSize";
 
-import { Shrink, Enlarge } from "views/icons";
+import { Shrink, Enlarge } from "@/views/icons";
 
 
 export function PageSizeIndicator(props: PageSizeIndicatorProps): JSX.Element | null

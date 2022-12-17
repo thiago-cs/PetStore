@@ -1,4 +1,4 @@
-import { Brand } from "models/Brand";
+import { Brand } from "@/models/Brand";
 
 
 export function BrandCard(props: BrandCardProps): JSX.Element

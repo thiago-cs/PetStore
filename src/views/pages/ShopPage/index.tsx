@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
-import { favoriteProductsComparison, filterProducts, Product } from "models/Product";
-import { ProductTag } from "models/ProductTag";
+import { favoriteProductsComparison, filterProducts, Product } from "@/models/Product";
+import { ProductTag } from "@/models/ProductTag";
 import { Page } from "../Page";
-import { BestSellerSection } from "views/sections/BestSellerSection";
-import { FilterCriterion } from "views/components/Filter/FilterCriterion";
-import { Cat, Dog, Bird, Fish, PetFood, PetToy, PetMedicine } from "views/icons";
-import { useProducts } from "utils/useProducts";
+import { BestSellerSection } from "@/views/sections/BestSellerSection";
+import { FilterCriterion } from "@/views/components/Filter/FilterCriterion";
+import { Cat, Dog, Bird, Fish, PetFood, PetToy, PetMedicine } from "@/views/icons";
+import { useProducts } from "@/utils/useProducts";
 
 
 export function ShopPage(): JSX.Element

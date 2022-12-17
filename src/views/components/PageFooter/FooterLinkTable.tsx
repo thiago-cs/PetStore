@@ -1,4 +1,4 @@
-import { LinkInfoGroup } from "models/LinkInfo";
+import { LinkInfoGroup } from "@/models/LinkInfo";
 import { FooterLink } from "./FooterLink";
 import { FooterLinkListHeader } from "./FooterLinkListHeader";
 

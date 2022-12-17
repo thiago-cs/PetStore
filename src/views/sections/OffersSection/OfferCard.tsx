@@ -1,6 +1,6 @@
-import { OverlappingPanel } from "views/panels/OverlappingPanel";
+import { OverlappingPanel } from "@/views/panels/OverlappingPanel";
 import { LinkButton } from "../../components/LinkButton";
-import { Offer } from "models/Offer";
+import { Offer } from "@/models/Offer";
 
 
 export function OfferCard(props: OfferCardProps): JSX.Element

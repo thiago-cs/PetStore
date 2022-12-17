@@ -1,5 +1,5 @@
-import { OfferCard } from "views/sections/OffersSection/OfferCard";
-import { useOffers } from "utils/useOffers";
+import { OfferCard } from "@/views/sections/OffersSection/OfferCard";
+import { useOffers } from "@/utils/useOffers";
 
 
 export function OffersSection(): JSX.Element

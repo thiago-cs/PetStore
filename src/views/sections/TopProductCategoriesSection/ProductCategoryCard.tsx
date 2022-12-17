@@ -1,4 +1,4 @@
-import { ProductCategory } from "models/ProductCategory";
+import { ProductCategory } from "@/models/ProductCategory";
 
 
 export function ProductCategoryCard(props: ProductCategoryCardProps): JSX.Element

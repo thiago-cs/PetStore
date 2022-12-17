@@ -3,9 +3,9 @@ import { Styles } from "@mantine/styles";
 import { CarouselStylesParams } from "@mantine/carousel/lib/Carousel.styles";
 import { CarouselBreakpoint } from "@mantine/carousel/lib/types";
 
-import { ProductCategoryCard } from "views/sections/TopProductCategoriesSection/ProductCategoryCard";
-import { DuoToneHeader } from "views/components/DuoToneHeader";
-import { settings } from "../../../settings";
+import { ProductCategoryCard } from "@/views/sections/TopProductCategoriesSection/ProductCategoryCard";
+import { DuoToneHeader } from "@/views/components/DuoToneHeader";
+import { settings } from "@/settings";
 
 
 export function TopProductCategoriesSection(): JSX.Element

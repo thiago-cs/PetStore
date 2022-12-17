@@ -1,5 +1,5 @@
-import { DuoToneHeader } from "views/components/DuoToneHeader";
-import { Icon, Package, PhoneCall, ShieldCheck, Truck } from "views/icons";
+import { DuoToneHeader } from "@/views/components/DuoToneHeader";
+import { Icon, Package, PhoneCall, ShieldCheck, Truck } from "@/views/icons";
 
 import serviceImage from "/src/assets/images/service-image.jpg";
 

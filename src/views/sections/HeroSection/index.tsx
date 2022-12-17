@@ -1,13 +1,13 @@
-import { OverlappingPanel } from "views/panels/OverlappingPanel";
-import { ImageSticker } from "views/components/Sticker/ImageSticker";
-import { PawSticker } from "views/components/Sticker/PawSticker";
-import { LinkButton } from "views/components/LinkButton";
-import { CurlyOverlay } from "views/components/CurlyOverlay";
-import { HTMLComment } from "views/devComponents/HTMLComment";
-// import { WireFrame } from "views/devComponents/WireFrame";
+import { OverlappingPanel } from "@/views/panels/OverlappingPanel";
+import { ImageSticker } from "@/views/components/Sticker/ImageSticker";
+import { PawSticker } from "@/views/components/Sticker/PawSticker";
+import { LinkButton } from "@/views/components/LinkButton";
+import { CurlyOverlay } from "@/views/components/CurlyOverlay";
+import { HTMLComment } from "@/views/devComponents/HTMLComment";
+// import { WireFrame } from "@/views/devComponents/WireFrame";
 
-import heroDog from "assets/images/hero-dog.png";
-import heroBag from "assets/images/hero-bag.png";
+import heroDog from "@/assets/images/hero-dog.png";
+import heroBag from "@/assets/images/hero-bag.png";
 
 
 export function HeroSection(): JSX.Element

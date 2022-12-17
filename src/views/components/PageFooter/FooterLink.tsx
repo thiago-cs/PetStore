@@ -1,4 +1,4 @@
-import { LinkInfo } from "models/LinkInfo";
+import { LinkInfo } from "@/models/LinkInfo";
 
 
 export function FooterLink(props: FooterLinkProps): JSX.Element

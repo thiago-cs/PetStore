@@ -1,9 +1,9 @@
-import { LinkInfoGroup } from "models/LinkInfo";
+import { LinkInfoGroup } from "@/models/LinkInfo";
 import { FooterLinkTable } from "./FooterLinkTable";
-import { CurlyOverlay } from "views/components/CurlyOverlay";
-import { CompanyLogo } from "views/components/CompanyLogo";
-import { MapPin, Phone } from "views/icons";
-import { settings } from "../../../settings";
+import { CurlyOverlay } from "@/views/components/CurlyOverlay";
+import { CompanyLogo } from "@/views/components/CompanyLogo";
+import { MapPin, Phone } from "@/views/icons";
+import { settings } from "@/settings";
 
 
 export function PageFooter(props: PageFooterProps): JSX.Element

@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
-import { Icon } from "views/icons";
-import { Action } from "models/Action";
+import { Icon } from "@/views/icons";
+import { Action } from "@/models/Action";
 
 
 export function CommandBarButton(props: CommandBarButtonProps): JSX.Element

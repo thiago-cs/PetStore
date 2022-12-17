@@ -1,6 +1,6 @@
 import { CSSProperties, SVGProps } from "react";
 
-import { Action } from "models/Action";
+import { Action } from "@/models/Action";
 
 import "./NavigationToggle.css";
 

@@ -1,5 +1,5 @@
-import { LoadingIndicator } from "views/components/LoadingIndicator";
-import { AttributionSection } from "views/sections/AttributionSection";
+import { LoadingIndicator } from "@/views/components/LoadingIndicator";
+import { AttributionSection } from "@/views/sections/AttributionSection";
 import { Page } from "../Page";
 
 

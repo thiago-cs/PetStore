@@ -1,8 +1,8 @@
-import { Brand } from "models/Brand";
-import { Offer } from "models/Offer";
-import { Product } from "models/Product";
-import { ProductTag } from "models/ProductTag";
-import { sleep } from "utils/sleep";
+import { Brand } from "@/models/Brand";
+import { Offer } from "@/models/Offer";
+import { Product } from "@/models/Product";
+import { ProductTag } from "@/models/ProductTag";
+import { sleep } from "@/utils/sleep";
 
 
 /**

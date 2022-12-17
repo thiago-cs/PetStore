@@ -1,10 +1,10 @@
 import { Rating } from "@mantine/core";
 
-import { Product } from "models/Product";
-import { Price } from "views/components/ProductListView/Price";
-import { Favorite } from "views/icons";
+import { Product } from "@/models/Product";
+import { Price } from "@/views/components/ProductListView/Price";
+import { Favorite } from "@/views/icons";
 
-import defaultImage from "assets/images/package.svg";
+import defaultImage from "@/assets/images/package.svg";
 
 
 export function ProductCard(props: ProductCardProps): JSX.Element

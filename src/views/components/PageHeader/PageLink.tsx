@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-import { Action } from "models/Action";
+import { Action } from "@/models/Action";
 
 
 export function PageLink(props: PageLinkProps): JSX.Element

@@ -1,4 +1,4 @@
-import { PawSticker, PawStickerProps } from "views/components/Sticker/PawSticker";
+import { PawSticker, PawStickerProps } from "@/views/components/Sticker/PawSticker";
 
 import "./index.css";
 

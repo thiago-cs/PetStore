@@ -1,6 +1,6 @@
-import { CommandBarButton } from "views/components/PageHeader/CommandBarButton";
-import { IconProps, DarkTheme, LightTheme } from "views/icons";
-import { Theme, useThemeToggle } from "utils/ThemeService";
+import { CommandBarButton } from "@/views/components/PageHeader/CommandBarButton";
+import { IconProps, DarkTheme, LightTheme } from "@/views/icons";
+import { Theme, useThemeToggle } from "@/utils/ThemeService";
 
 
 export function ThemeToggleButton(props: ThemeToggleButtonProps): JSX.Element

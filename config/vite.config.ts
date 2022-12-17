@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import reactPlugin from '@vitejs/plugin-react';
+import * as path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig(
@@ -8,10 +9,7 @@ export default defineConfig(
   {
     alias:
     {
-      views: "/src/views",
-      models: "/src/models",
-      assets: "/src/assets",
-      utils: "/src/utils",
+      "@": path.resolve(__dirname, "../src"),
     },
   },
   plugins: [ reactPlugin() ],

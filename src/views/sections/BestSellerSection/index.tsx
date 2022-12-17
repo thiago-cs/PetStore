@@ -1,7 +1,7 @@
-import { Product } from "models/Product";
-import { Filter, FilterProps } from "views/components/Filter";
-import { DuoToneHeader } from "views/components/DuoToneHeader";
-import { ProductListView } from "views/components/ProductListView";
+import { Product } from "@/models/Product";
+import { Filter, FilterProps } from "@/views/components/Filter";
+import { DuoToneHeader } from "@/views/components/DuoToneHeader";
+import { ProductListView } from "@/views/components/ProductListView";
 
 
 export function BestSellerSection(props: BestSellerSectionProps): JSX.Element

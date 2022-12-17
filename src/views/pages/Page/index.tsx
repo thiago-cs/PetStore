@@ -1,4 +1,4 @@
-import { settings } from "../../../settings";
+import { settings } from "@/settings";
 
 
 export function Page(props: PageProps): JSX.Element

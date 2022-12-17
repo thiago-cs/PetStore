@@ -1,7 +1,7 @@
 // cSpell:ignore Kitter, Petco, Pataskala, Vecteezy
 
-import { LinkInfo } from "models/LinkInfo";
-import { ProductCategory } from "models/ProductCategory";
+import { LinkInfo } from "@/models/LinkInfo";
+import { ProductCategory } from "@/models/ProductCategory";
 
 import CompanyLogo from "/src/assets/images/favicon.svg";
 import Category1Image from "/src/assets/images/category-1.jpg";

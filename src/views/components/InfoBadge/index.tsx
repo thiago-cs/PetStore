@@ -1,6 +1,6 @@
 import { CSSProperties } from "react";
 
-import { OverlappingPanel } from "views/panels/OverlappingPanel";
+import { OverlappingPanel } from "@/views/panels/OverlappingPanel";
 
 
 export function InfoBadge(props: InfoBadgeProps): JSX.Element
