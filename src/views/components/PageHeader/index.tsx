@@ -94,7 +94,7 @@ export function PageHeader(props: PageHeaderProps): JSX.Element
 
 						<li>
 							<CommandBarButton>
-								<InfoBadge value={1} background="var(--accent-color-secondary)" foreground="white" >
+								<InfoBadge content={shoppingCartItemsCount} background="var(--accent-color-secondary)" foreground="white" >
 									<Shop size={iconSize} />
 								</InfoBadge>
 							</CommandBarButton>
