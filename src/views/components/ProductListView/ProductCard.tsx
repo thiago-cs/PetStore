@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Rating } from "@mantine/core";
 
 import { Product } from "@/models/Product";
@@ -24,19 +25,20 @@ export function ProductCard(props: ProductCardProps): JSX.Element
 			<div className="p-1 flex-row place-content-center gap-1 bg-transparent" >
 				<Rating fractions={2} defaultValue={product.ratingScore} readOnly />
 				<span className="ml-1 text-xs text-alt-low" >
-					{product.numberOfReviews} ratings
+					{ product.numberOfReviews } ratings
 				</span>
 			</div>
 
-			<a className="flex-col items-center" href={product.productPageUrl} >
+			<Link className="flex-col items-center" to={product.productPageUrl} >
 
 				<span className="text-lg text-center [a:hover_&]:underline" >
-					{product.description}
+					{ product.description }
 				</span>
 
 				<Price value={product.price} />
 
-			</a>
+			</Link>
+
 
 			<button className={`absolute top-2 right-2 p-2 rounded-full text-alt-medium
 								${product.isFavorite ? "" : "opacity-0"}  [.card:hover_&]:opacity-100 transition-opacity duration-200`}

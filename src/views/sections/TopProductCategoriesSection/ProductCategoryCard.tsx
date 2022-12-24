@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import { ProductCategory } from "@/models/ProductCategory";
 
 
@@ -6,7 +8,7 @@ export function ProductCategoryCard(props: ProductCategoryCardProps): JSX.Elemen
 	const { image, header, url } = props.category;
 
 	return (
-		<a className="mx-auto group cursor-pointer flex-col items-center" href={url} >
+		<Link className="mx-auto group cursor-pointer flex-col items-center" to={url} >
 
 			<div className="min-w-[8rem] max-w-[16rem] aspect-square rounded-[3%] overflow-clip" >
 				<img className="w-full h-full group-hover:scale-110
@@ -19,7 +21,7 @@ export function ProductCategoryCard(props: ProductCategoryCardProps): JSX.Elemen
 						   transition-colors duration-500 ease-out" >
 				{header}
 			</h3>
-		</a>
+		</Link>
 	);
 }
 

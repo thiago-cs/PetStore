@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import { Page } from "../Page";
 import { SignInForm } from "./SignInForm";
 
@@ -27,13 +29,13 @@ export function SignInPage(/* props: SignInPageProps */): JSX.Element
 
 					<div className="flex-row gap-4 text-sm text-left text-alt-medium-low sm:text-center" >
 
-						<a href="#" className="btn btn-link" >
+						<Link to="#" className="btn btn-link" >
 							Forgot password
-						</a>
+						</Link>
 
-						<a href="#" className="btn btn-link" >
+						<Link to="#" className="btn btn-link" >
 							Create an account
-						</a>
+						</Link>
 					</div>
 
 				</div>
