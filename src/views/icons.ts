@@ -35,4 +35,5 @@ export
 	Pill as PetMedicine,
 	TennisBall as PetToy,
 	ArrowSquareOut as OpenInNewTab,
+	ShoppingCart,
 } from "phosphor-react";
