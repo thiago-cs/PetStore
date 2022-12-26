@@ -6,6 +6,7 @@ import { PageFooter } from "@/views/components/PageFooter";
 import { PageSizeIndicator } from "@/views/devComponents/PageSizeIndicator";
 import { useScrollToTopEffect } from "@/utils/scrollToTopEffect";
 import { settings } from "@/settings";
+import { ShoppingCartProvider } from "@/context/ShoppingCartContext";
 
 
 const footerLinkGroups = createLinkInfoGroupsFromObject(settings.footerLinks);
@@ -15,17 +16,19 @@ export function AppShell(): JSX.Element
 {
 	useScrollToTopEffect();
 
-	return <>
-		<PageHeader companyName={settings.companyInfo.name}
-					logoPath={settings.companyInfo.logo}
-					pages={settings.pages}
-					iconSize={settings.header.iconSize} />
+	return (
+		<ShoppingCartProvider>
+			<PageHeader companyName={settings.companyInfo.name}
+						logoPath={settings.companyInfo.logo}
+						pages={settings.pages}
+						iconSize={settings.header.iconSize} />
 
-		<Outlet />
+			<Outlet />
 
-		<PageFooter linkGroups={footerLinkGroups} />
+			<PageFooter linkGroups={footerLinkGroups} />
 
-		<PageSizeIndicator className="fixed bottom-4 right-4 z-50" />
-	</>;
+			<PageSizeIndicator className="fixed bottom-4 right-4 z-50" />
+		</ShoppingCartProvider>
+	);
 
 }

@@ -2,15 +2,18 @@ import { Link } from "react-router-dom";
 import { Rating } from "@mantine/core";
 
 import { Product } from "@/models/Product";
+import { useShoppingCart } from "@/context/ShoppingCartContext";
 import { Price } from "@/views/components/ProductListView/Price";
-import { Favorite } from "@/views/icons";
+import { Favorite, ShoppingCart } from "@/views/icons";
 
 import defaultImage from "@/assets/images/package.svg";
 
 
 export function ProductCard(props: ProductCardProps): JSX.Element
 {
-	const { className = "", product, onIsFavoriteChanged: onIsFavoriteChanged } = props;
+	const shoppingCartContext = useShoppingCart();
+
+	const { className = "", product, onIsFavoriteChanged } = props;
 
 	let image = product.images[0];
 
@@ -29,9 +32,9 @@ export function ProductCard(props: ProductCardProps): JSX.Element
 				</span>
 			</div>
 
-			<Link className="flex-col items-center" to={product.productPageUrl} >
+			<Link className="p-2 flex-col gap-2" to={product.productPageUrl} >
 
-				<span className="text-lg text-center [a:hover_&]:underline" >
+				<span className="[a:hover_&]:underline" >
 					{ product.description }
 				</span>
 
@@ -39,12 +42,22 @@ export function ProductCard(props: ProductCardProps): JSX.Element
 
 			</Link>
 
+			<div className={`absolute top-2 right-2 p-2 text-base-low
+							 flex-col gap-1
+							 [&_button]:rounded-full [&_button]:transition-opacity [&_button]:duration-200
+							 [.card:hover_&_button]:opacity-100`} >
 
-			<button className={`absolute top-2 right-2 p-2 rounded-full text-alt-medium
-								${product.isFavorite ? "" : "opacity-0"}  [.card:hover_&]:opacity-100 transition-opacity duration-200`}
-					onClick={onFavoriteButtonClick} >
-				<Favorite size={24} color={product.isFavorite ? "red" : "var(--base-low)"} />
-			</button>
+				<button className={`${product.isFavorite ? "opacity-100 text-red-500" : "opacity-0"}`}
+						onClick={onFavoriteButtonClick} >
+					<Favorite size={24} color="currentColor" />
+				</button>
+
+				<button className={`${isInShoppingCart(product) ? "opacity-100 text-alt-medium-high" : "opacity-0 hover:text-alt-medium-low"}`}
+						onClick={() => onShoppingCartButtonClick(product)} >
+					<ShoppingCart size={24} color="currentColor" />
+				</button>
+
+			</div>
 		</div>
 	);
 
@@ -55,6 +68,16 @@ export function ProductCard(props: ProductCardProps): JSX.Element
 		e.stopPropagation();
 
 		onIsFavoriteChanged(product);
+	}
+
+	function onShoppingCartButtonClick(product: Product): void
+	{
+		shoppingCartContext.addItem(product);
+	}
+
+	function isInShoppingCart(product: Product): boolean
+	{
+		return shoppingCartContext.items.some(item => item.product.id === product.id);
 	}
 }
 

@@ -47,7 +47,7 @@ export function ShopPage(): JSX.Element
 		const copy = [...products];
 
 		for (let i = 0; i < copy.length; i++)
-			if (copy[i].description == product.description)
+			if (copy[i].id === product.id)
 			{
 				copy[i] = {...product, isFavorite: !product.isFavorite };
 				break;

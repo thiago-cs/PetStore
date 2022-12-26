@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 
+import { useShoppingCart } from "@/context/ShoppingCartContext";
 import { NavigationToggle } from "./NavigationToggle";
 import { CommandBarLink } from "./CommandBarLink";
 import { AcrylicPanel } from "@/views/panels/AcrylicPanel";
@@ -17,10 +18,15 @@ import { useToggle } from "@/utils/useToggle";
 export function PageHeader(props: PageHeaderProps): JSX.Element
 {
 	const currentPath = useLocation().pathname;
+	const shoppingCartContext = useShoppingCart();
 	const [ isNavFlyoutOpen, toggleNavFlyoutOpen ] = useToggle(false);
 	const { logoPath, companyName, pages } = props;
 
 	const iconSize = props.iconSize + "rem";
+
+	const shoppingCartItemsCount = shoppingCartContext.items !== undefined
+								 ? shoppingCartContext.items.reduce((acc,el) => acc + el.quantity, 0)
+								 : 0;
 
 	return (
 		<header className="z-20 text-alt-high" >
@@ -93,7 +99,7 @@ export function PageHeader(props: PageHeaderProps): JSX.Element
 						</li>
 
 						<li>
-							<CommandBarButton>
+							<CommandBarButton command={onShoppingCartClick} >
 								<InfoBadge content={shoppingCartItemsCount} background="var(--accent-color-secondary)" foreground="white" >
 									<Shop size={iconSize} />
 								</InfoBadge>
@@ -119,6 +125,11 @@ export function PageHeader(props: PageHeaderProps): JSX.Element
 	function dismissFlyout()
 	{
 		toggleNavFlyoutOpen();
+	}
+
+	function onShoppingCartClick()
+	{
+		shoppingCartContext.clearItems();
 	}
 }
 
