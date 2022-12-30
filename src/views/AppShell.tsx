@@ -4,7 +4,7 @@ import { createLinkInfoGroupsFromObject } from "@/models/LinkInfo";
 import { PageHeader } from "@/views/components/PageHeader";
 import { PageFooter } from "@/views/components/PageFooter";
 import { PageSizeIndicator } from "@/views/devComponents/PageSizeIndicator";
-import { useScrollToTopEffect } from "@/utils/scrollToTopEffect";
+import { useScrollToTopEffect } from "@/utils/useScrollToTopEffect";
 import { settings } from "@/settings";
 import { ShoppingCartProvider } from "@/context/ShoppingCartContext";
 
