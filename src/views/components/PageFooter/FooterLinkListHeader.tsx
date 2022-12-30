@@ -4,13 +4,13 @@ export function FooterLinkListHeader(props: FooterLinkListHeaderProps): JSX.Elem
 
 	return (
 		<div className="mb-1 text-alt-low text-base sm:text-lg" style={{ gridRowStart: 1 }} >
-			{header}
+			{ header }
 		</div>
 	);
 }
 
 
-interface FooterLinkListHeaderProps
+type FooterLinkListHeaderProps =
 {
-	header: string;
-}
+	header: string,
+};

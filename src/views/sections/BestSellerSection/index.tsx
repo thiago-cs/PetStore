@@ -66,13 +66,13 @@ export function BestSellerSection(props: BestSellerSectionProps): JSX.Element
 
 	function onProductIsFavoriteChanged(_product: Product): void
 	{
-		// throw new Error("Function not implemented.");
+		// todo: implement onProductIsFavoriteChanged
 	}
 }
 
 
-interface BestSellerSectionProps
+type BestSellerSectionProps =
 {
-	className?: string;
-	filters?: FilterProps<ProductTag>[];
-}
+	className?: string,
+	filters?: FilterProps<ProductTag>[],
+};

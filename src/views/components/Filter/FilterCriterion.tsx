@@ -1,6 +1,6 @@
-export interface FilterCriterion<T>
+export type FilterCriterion<T> =
 {
-	id: T;
-	title?: string;
-	content: JSX.Element;
-}
+	id: T,
+	title?: string,
+	content: JSX.Element,
+};

@@ -1,6 +1,6 @@
-export interface ProductCategory
+export type ProductCategory =
 {
-	header: string;
-	image: string;
-	url: string;
-}
+	header: string,
+	image: string,
+	url: string,
+};

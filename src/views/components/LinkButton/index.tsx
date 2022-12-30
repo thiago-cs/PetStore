@@ -10,15 +10,15 @@ export function LinkButton(props: LinkButtonProps): JSX.Element
 						  bg-black text-white text-sm sm:text-base hover:bg-accent-primary font-bold select-none
 						  transition-colors duration-300 ${className}`}
 			  to={url} >
-			{children}
+			{ children }
 		</Link>
 	);
 }
 
 
-interface LinkButtonProps
+type LinkButtonProps =
 {
-	url: string;
-	className?: string;
-	children: string;
-}
+	url: string,
+	className?: string,
+	children: string,
+};

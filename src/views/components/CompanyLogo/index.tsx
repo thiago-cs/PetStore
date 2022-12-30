@@ -3,9 +3,9 @@ export function CompanyLogo(props: CompanyLogoProps): JSX.Element
 	const { className = "", companyLogo: logo, companyName } = props;
 
 	return (
-		<a className={"flex-row items-center gap-1 " + className}
+		<a className={`flex-row items-center gap-1 ${className}`}
 		   href="/"
-		   title={companyName + " home page"} >
+		   title={`${companyName} home page`} >
 
 			{ props.companyLogo &&
 				<img className="w-7 aspect-square"
@@ -14,7 +14,7 @@ export function CompanyLogo(props: CompanyLogoProps): JSX.Element
 			}
 			{ props.companyName &&
 				<span className="font-carter text-2xl md:text-4xl select-none" >
-					{companyName}
+					{ companyName }
 				</span>
 			}
 		</a>
@@ -22,9 +22,9 @@ export function CompanyLogo(props: CompanyLogoProps): JSX.Element
 }
 
 
-interface CompanyLogoProps
+type CompanyLogoProps =
 {
-	className?: string;
-	companyLogo?: string;
-	companyName: string | null;
-}
+	className?: string,
+	companyLogo?: string,
+	companyName: string | null,
+};

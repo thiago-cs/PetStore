@@ -18,7 +18,7 @@ export function BrandCard(props: BrandCardProps): JSX.Element
 }
 
 
-interface BrandCardProps
+type BrandCardProps =
 {
-	brand: Brand;
-}
+	brand: Brand,
+};

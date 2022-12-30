@@ -10,24 +10,24 @@ export function PageLink(props: PageLinkProps): JSX.Element
 	/* I do not like the built-in {isActive}. */
 	return isActive
 		?
-		<span className={"cursor-default underline " + className}
+		<span className={`cursor-default underline ${className}`}
 			  onClick={onClick} >
-			{title}
+			{ title }
 		</span>
 		:
 		<NavLink className={"cursor-pointer opacity-80 hover:opacity-100 focus:opacity-100 transition-opacity duration-100 " + className}
 				 to={to}
 				 onClick={onClick} >
-			{title}
+			{ title }
 		</NavLink>;
 }
 
 
-interface PageLinkProps
+type PageLinkProps =
 {
-	title: string;
-	to: string;
-	isActive?: boolean;
-	className?: string;
-	onClick?: Action;
-}
+	title: string,
+	to: string,
+	isActive?: boolean,
+	className?: string,
+	onClick?: Action,
+};

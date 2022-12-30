@@ -1,6 +1,6 @@
+import { LinkInfoGroup } from "@/models/LinkInfo";
 import { FooterLink } from "./FooterLink";
 import { FooterLinkListHeader } from "./FooterLinkListHeader";
-import { LinkInfoGroup } from "@/models/LinkInfo";
 
 
 export function FooterLinkList(props: FooterLinkListProps): JSX.Element
@@ -24,7 +24,7 @@ export function FooterLinkList(props: FooterLinkListProps): JSX.Element
 }
 
 
-interface FooterLinkListProps
+type FooterLinkListProps =
 {
-	linkGroup: LinkInfoGroup;
-}
+	linkGroup: LinkInfoGroup,
+};

@@ -17,8 +17,8 @@ export function FooterLink(props: FooterLinkProps): JSX.Element
 }
 
 
-interface FooterLinkProps
+type FooterLinkProps =
 {
-	row: number;
-	link: LinkInfo;
-}
+	row: number,
+	link: LinkInfo,
+};

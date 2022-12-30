@@ -26,13 +26,13 @@ export function ProductCard(props: ProductCardProps): JSX.Element
 			</div>
 
 			<div className="p-1 flex-row place-content-center gap-1 bg-transparent" >
-				<Rating fractions={2} defaultValue={product.ratingScore} readOnly />
+				<Rating fractions={2} defaultValue={product.rating.score} readOnly />
 				<span className="ml-1 text-xs text-alt-low" >
-					{ product.numberOfReviews } ratings
+					{ product.rating.numberOfReviews } ratings
 				</span>
 			</div>
 
-			<Link className="p-2 flex-col gap-2" to={product.productPageUrl} >
+			<Link className="p-2 flex-col gap-2" to={product.pageUrl} >
 
 				<span className="[a:hover_&]:underline" >
 					{ product.description }
@@ -82,17 +82,21 @@ export function ProductCard(props: ProductCardProps): JSX.Element
 }
 
 
-interface ProductCardProps
+type ProductCardProps =
 {
-	product: Product;
-	className?: string;
-	onIsFavoriteChanged: (product: Product) => void;
-}
+	product: Product,
+	className?: string,
+	onIsFavoriteChanged: (product: Product) => void,
+};
 
 function onProductImageLoadError(event: React.SyntheticEvent<HTMLImageElement>): void
 {
+	const target = event.currentTarget;
 	const a = defaultImage;
 
-	if (event.currentTarget.src !== a)
-		event.currentTarget.src = a;
+	if (target.src === a)
+		return;
+
+	target.src = a;
+	target.className = "max-w-[80%] max-h-[80%] grayscale-[75%]";
 }

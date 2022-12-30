@@ -3,20 +3,20 @@ export function DuoToneHeader(props: DuoToneHeaderProps): JSX.Element
 	const { className = "", children: [text1, text2] } = props;
 
 	return (
-		<h2 className={"text-4xl text-center " + className} >
+		<h2 className={`text-4xl text-center ${className}`} >
 			<span className="text-accent-primary" >
-				{text1}
+				{ text1 }
 			</span>
 			<span className="font-semibold" >
-				{text2}
+				{ text2 }
 			</span>
 		</h2>
 	);
 }
 
 
-interface DuoToneHeaderProps
+type DuoToneHeaderProps =
 {
-	className?: string;
-	children: [string, string];
-}
+	className?: string,
+	children: [string, string],
+};

@@ -17,10 +17,10 @@ export function Page(props: PageProps): JSX.Element
 }
 
 
-interface PageProps
+type PageProps =
 {
-	title: string;
+	title: string,
 
-	className?: string;
-	children: React.ReactNode;
-}
+	className?: string,
+	children: React.ReactNode,
+};

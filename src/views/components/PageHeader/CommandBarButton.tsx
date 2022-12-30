@@ -1,7 +1,5 @@
-import { ReactNode } from "react";
-
-import { Icon } from "@/views/icons";
 import { Action } from "@/models/Action";
+import { Icon } from "@/views/icons";
 
 
 export function CommandBarButton(props: CommandBarButtonProps): JSX.Element
@@ -20,12 +18,12 @@ export function CommandBarButton(props: CommandBarButtonProps): JSX.Element
 }
 
 
-interface CommandBarButtonProps
+type CommandBarButtonProps =
 {
-	icon?: Icon;
-	iconSize?: number | string;
-	command?: Action;
+	icon?: Icon,
+	iconSize?: number | string,
+	command?: Action,
 
-	className?: string;
-	children?: ReactNode;
-}
+	className?: string,
+	children?: React.ReactNode,
+};

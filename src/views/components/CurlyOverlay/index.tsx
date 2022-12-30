@@ -16,10 +16,10 @@ export function CurlyOverlay(props: CurlyOverlayProps): JSX.Element
 }
 
 
-interface CurlyOverlayProps
+type CurlyOverlayProps =
 {
-	className?: string
-	foreground: string;
-	//background?: string;
-	forceUniformScaling?: boolean;
-}
+	className?: string,
+	foreground: string,
+	//background?: string,
+	forceUniformScaling?: boolean,
+};

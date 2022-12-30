@@ -29,13 +29,13 @@ export function NavigationToggle(props: NavigationToggleProps): JSX.Element
 }
 
 
-interface NavigationToggleProps
+type NavigationToggleProps =
 {
-	isOpen: boolean;
-	size: string;
-	className?: string;
-	onClick: Action;
-}
+	isOpen: boolean,
+	size: string,
+	className?: string,
+	onClick: Action,
+};
 
 
 const lineAttributes: SVGProps<SVGLineElement> =
@@ -44,4 +44,4 @@ const lineAttributes: SVGProps<SVGLineElement> =
 	strokeLinecap: "round",
 	strokeLinejoin: "round",
 	strokeWidth: "16",
-}
+};

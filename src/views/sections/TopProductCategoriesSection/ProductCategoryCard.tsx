@@ -19,14 +19,14 @@ export function ProductCategoryCard(props: ProductCategoryCardProps): JSX.Elemen
 
 			<h3 className="pt-2 text-center md:text-xl font-bold hover:text-accent-secondary
 						   transition-colors duration-500 ease-out" >
-				{header}
+				{ header }
 			</h3>
 		</Link>
 	);
 }
 
 
-interface ProductCategoryCardProps
+type ProductCategoryCardProps =
 {
-	category: ProductCategory;
-}
+	category: ProductCategory,
+};

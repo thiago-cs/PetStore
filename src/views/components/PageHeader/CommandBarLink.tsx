@@ -22,13 +22,13 @@ export function CommandBarLink(props: CommandBarLinkProps): JSX.Element
 }
 
 
-interface CommandBarLinkProps
+type CommandBarLinkProps =
 {
-	icon?: Icon;
-	iconSize?: number | string;
-	url?: string;
-	click?: Action;
+	icon?: Icon,
+	iconSize?: number | string,
+	url?: string,
+	click?: Action,
 
-	className?: string;
-	children?: ReactNode;
-}
+	className?: string,
+	children?: ReactNode,
+};

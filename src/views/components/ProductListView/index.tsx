@@ -1,6 +1,5 @@
 import { Product } from "@/models/Product";
 import { ProductCard } from "./ProductCard";
-import { ProductCardPlaceholder } from "./ProductCardPlaceholder";
 
 
 export function ProductListView(props: ProductListViewProps): JSX.Element
@@ -25,20 +24,8 @@ export function ProductListView(props: ProductListViewProps): JSX.Element
 }
 
 
-interface ProductListViewProps
+type ProductListViewProps =
 {
-	products: Product[];
-	productIsFavoriteChanged: (product: Product) => void;
-}
-
-
-function Loading1(): JSX.Element
-{
-	return (
-		<ul className="pt-10 flex-row flex-wrap place-content-center gap-4" >
-			<li><ProductCardPlaceholder /></li>
-			<li><ProductCardPlaceholder /></li>
-			<li className="hidden md:block" ><ProductCardPlaceholder /></li>
-		</ul>
-	);
-}
+	products: Product[],
+	productIsFavoriteChanged: (product: Product) => void,
+};

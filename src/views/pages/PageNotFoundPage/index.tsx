@@ -1,7 +1,7 @@
 import { Page } from "../Page";
 
 
-export function NotFoundPage(/* props: NotFoundPageProps */): JSX.Element
+export function NotFoundPage(): JSX.Element
 {
 	return (
 		<Page title="Not Found" className="min-h-[50vh] pt-20 flex-row justify-center items-center" >
@@ -10,9 +10,3 @@ export function NotFoundPage(/* props: NotFoundPageProps */): JSX.Element
 		</Page>
 	);
 }
-
-
-// interface NotFoundPageProps
-// {
-// 	requestedPath: string;
-// }

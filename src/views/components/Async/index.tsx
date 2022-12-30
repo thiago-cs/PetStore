@@ -9,17 +9,17 @@ export function Async<T>(props: AsyncProps<T>): JSX.Element
 	return (
 		<React.Suspense fallback={loadingElement} >
 			<Await resolve={promise} errorElement={errorElement} >
-				{successElement}
+				{ successElement }
 			</Await>
 		</React.Suspense>
 	);
 }
 
 
-interface AsyncProps<T>
+type AsyncProps<T> =
 {
-	promise: Promise<T>;
-	loadingElement: JSX.Element;
-	errorElement?: JSX.Element;
-	children: React.ReactNode;
-}
+	promise: Promise<T>,
+	loadingElement: JSX.Element,
+	errorElement?: JSX.Element,
+	children: React.ReactNode,
+};

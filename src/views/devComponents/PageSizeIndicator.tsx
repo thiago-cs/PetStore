@@ -66,10 +66,10 @@ export function PageSizeIndicator(props: PageSizeIndicatorProps): JSX.Element | 
 }
 
 
-interface PageSizeIndicatorProps
+type PageSizeIndicatorProps =
 {
-	className?: string;
-}
+	className?: string,
+};
 
 
 const iconSize = "1rem";

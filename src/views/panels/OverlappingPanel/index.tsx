@@ -3,21 +3,18 @@ import "./index.css";
 
 export function OverlappingPanel(props: OverlappingPanelProps): JSX.Element
 {
-	let className = "overlapping-panel ";
-
-	if (props.className)
-		className += props.className;
+	const { className = "", children } = props;
 
 	return (
-		<div className={className}>
-			{props.children}
+		<div className={"overlapping-panel " + className}>
+			{ children }
 		</div>
 	);
 }
 
 
-interface OverlappingPanelProps
+type OverlappingPanelProps =
 {
-	className?: string;
-	children?: React.ReactNode;
-}
+	className?: string,
+	children: React.ReactNode,
+};

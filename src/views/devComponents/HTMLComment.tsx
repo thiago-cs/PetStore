@@ -1,20 +1,23 @@
 import { createRef, useLayoutEffect } from "react";
+
 import { Action } from "@/models/Action";
 
 
-export function HTMLComment(props: HTMLCommentProps): JSX.Element
+export function HTMLComment(props: HTMLCommentProps): JSX.Element | null
 {
-	const shouldInclude = props.includeInProduction || !import.meta.env.PROD;
+	const { includeInProduction, children = "", text = "" } = props;
+
+	const shouldInclude = includeInProduction || !import.meta.env.PROD;
+	const comment = ` ${text} ${children} `;
 	const callback = shouldInclude ? effectCallback : () => {};
 
 	useLayoutEffect(callback, []);
 
 	if (!shouldInclude)
-		return <></>;
+		return null;
 
 
 	const ref = createRef<HTMLSpanElement>();
-	const text = ` ${props.text?.trim() ?? ""} ${props.children?.trim() ?? ""} `;
 
 
 	return <span ref={ref} style={{ display: "none" }} />;
@@ -27,12 +30,12 @@ export function HTMLComment(props: HTMLCommentProps): JSX.Element
 
 		const node = ref.current;
 		const parent = node.parentNode;
-		const comment = window.document.createComment(text);
+		const element = window.document.createComment(comment);
 
 		try
 		{
 			if (parent?.contains(node))
-				parent.replaceChild(comment, node);
+				parent.replaceChild(element, node);
 		}
 		catch (error)
 		{
@@ -45,18 +48,18 @@ export function HTMLComment(props: HTMLCommentProps): JSX.Element
 
 		function cleanupCallback(): void
 		{
-			parent?.replaceChild(node, comment);
+			parent?.replaceChild(node, element);
 		}
 	}
 }
 
 
-interface HTMLCommentProps
+type HTMLCommentProps =
 {
-	text?: string;
-	children: string;
-	includeInProduction?: boolean;
-}
+	text?: string,
+	children: string,
+	includeInProduction?: boolean,
+};
 
 HTMLComment.defaultProps =
 {

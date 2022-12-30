@@ -18,15 +18,15 @@ export function Sticker(props: StickerProps): JSX.Element
 }
 
 
-export interface StickerPropsBase
+export type StickerPropsBase =
 {
-	x: number;
-	y: number;
-	size: number;
-	angle: number;
-}
+	x: number,
+	y: number,
+	size: number,
+	angle: number,
+};
 
-interface StickerProps extends StickerPropsBase
+type StickerProps = StickerPropsBase &
 {
-	children: JSX.Element;
-}
+	children: JSX.Element,
+};

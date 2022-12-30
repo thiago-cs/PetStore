@@ -134,10 +134,10 @@ export function PageHeader(props: PageHeaderProps): JSX.Element
 }
 
 
-interface PageHeaderProps
+type PageHeaderProps =
 {
-	logoPath?: string;
-	companyName: string | null;
-	pages: { title: string, url: string }[];
-	iconSize: number;
-}
+	logoPath?: string,
+	companyName: string | null,
+	pages: { title: string, url: string }[],
+	iconSize: number,
+};

@@ -18,7 +18,7 @@ export function PawSticker(props: PawStickerProps): JSX.Element
 }
 
 
-export interface PawStickerProps extends StickerPropsBase
+export type PawStickerProps = StickerPropsBase &
 {
-	color?: string;
-}
+	color?: string,
+};

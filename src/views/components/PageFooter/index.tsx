@@ -66,7 +66,7 @@ export function PageFooter(props: PageFooterProps): JSX.Element
 }
 
 
-interface PageFooterProps
+type PageFooterProps =
 {
-	linkGroups: LinkInfoGroup[];
-}
+	linkGroups: LinkInfoGroup[],
+};

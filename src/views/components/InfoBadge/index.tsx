@@ -31,10 +31,10 @@ export function InfoBadge(props: InfoBadgeProps): JSX.Element
 }
 
 
-interface InfoBadgeProps
+type InfoBadgeProps =
 {
-	content: number | string | JSX.Element;
-	background: string;
-	foreground?: string;
-	children: JSX.Element;
-}
+	content: number | string | JSX.Element,
+	background: string,
+	foreground?: string,
+	children: JSX.Element,
+};

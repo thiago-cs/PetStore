@@ -16,9 +16,7 @@ export function ThemeToggleButton(props: ThemeToggleButtonProps): JSX.Element
 }
 
 
-interface ThemeToggleButtonProps extends Pick<IconProps, "size">
-{
-}
+type ThemeToggleButtonProps = Pick<IconProps, "size">;
 
 
 function getThemeIcon(theme: Theme)

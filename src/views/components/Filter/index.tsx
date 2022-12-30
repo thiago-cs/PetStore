@@ -38,11 +38,11 @@ export function Filter<T>(props: FilterProps<T>): JSX.Element
 }
 
 
-export interface FilterProps<T>
+export type FilterProps<T> =
 {
-	selectedItems?: T[];
-	allowMultiselect: boolean;
-	className?: string;
-	itemsSource: FilterCriterion<T>[];
-	selectedItemsChanged: (criteria:T[]) => void;
-}
+	selectedItems?: T[],
+	allowMultiselect: boolean,
+	className?: string,
+	itemsSource: FilterCriterion<T>[],
+	selectedItemsChanged: (criteria:T[]) => void,
+};

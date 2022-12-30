@@ -13,16 +13,18 @@ export function Price(props: PriceProps): JSX.Element
 	return (
 		<div className={`flex-row items-start flex-nowrap -text-accent-primary font-bold ${className}`}>
 			<span className="text-xl">
-				{unitsText}
+				{ unitsText }
 			</span>
 			<span className="text-xs pl-px">
-				{fractionalText}
+				{ fractionalText }
 			</span>
 		</div>
 	);
 }
-interface PriceProps
+
+
+type PriceProps =
 {
-	value: number;
-	className?: string;
-}
+	value: number,
+	className?: string,
+};

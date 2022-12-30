@@ -36,20 +36,20 @@ export function Advantage(props: AdvantageProps): JSX.Element
 			<Icon size={60} color="var(--accent-color-secondary)" />
 
 			<h3 className="text-2xl" >
-				{header}
+				{ header }
 			</h3>
 			
 			<p className="text-alt-medium-low" >
-				{content}
+				{ content }
 			</p>
 		</div>
 	);
 }
 
 
-interface AdvantageProps
+type AdvantageProps =
 {
-	icon: Icon;
-	header: string;
-	content: string;
-}
+	icon: Icon,
+	header: string,
+	content: string,
+};

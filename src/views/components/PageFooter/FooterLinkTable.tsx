@@ -21,16 +21,11 @@ export function FooterLinkTable(props: FooterLinkTableProps): JSX.Element
 		}
 		</nav>
 	);
-	//	<div className="mb-12 flex-row justify-around gap-[4vw]" >
-	//	{
-	//		linkGroups.map((item, index) => <FooterLinkList key={index} linkGroup={item} />)
-	//	}
-	//	</div>
 }
 
 
-interface FooterLinkTableProps
+type FooterLinkTableProps =
 {
-	linkGroups: LinkInfoGroup[];
-	className?: string;
-}
+	linkGroups: LinkInfoGroup[],
+	className?: string,
+};

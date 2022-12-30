@@ -1,6 +1,6 @@
-import { OverlappingPanel } from "@/views/panels/OverlappingPanel";
-import { LinkButton } from "../../components/LinkButton";
 import { Offer } from "@/models/Offer";
+import { LinkButton } from "@/views/components/LinkButton";
+import { OverlappingPanel } from "@/views/panels/OverlappingPanel";
 
 
 export function OfferCard(props: OfferCardProps): JSX.Element
@@ -17,11 +17,11 @@ export function OfferCard(props: OfferCardProps): JSX.Element
 
 			<div className="mx-8 flex-col justify-center z-0" >
 				<h3 className="lg:text-lg text-black" >
-					{header}
+					{ header }
 				</h3>
 
 				<p className="w-1/2 min-h-[4.5rem] mb-[4%] text-3xl text-black font-bold" >
-					{content}
+					{ content }
 				</p>
 
 				<LinkButton url={url} >
@@ -34,7 +34,7 @@ export function OfferCard(props: OfferCardProps): JSX.Element
 }
 
 
-interface OfferCardProps
+type OfferCardProps =
 {
-	offer: Offer;
-}
+	offer: Offer,
+};

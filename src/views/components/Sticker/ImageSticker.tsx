@@ -11,7 +11,7 @@ export function ImageSticker(props: ImageStickerProps): JSX.Element
 }
 
 
-interface ImageStickerProps extends StickerPropsBase
+type ImageStickerProps = StickerPropsBase &
 {
-	image: string;
-}
+	image: string,
+};

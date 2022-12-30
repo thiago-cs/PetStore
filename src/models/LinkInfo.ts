@@ -1,14 +1,14 @@
-export interface LinkInfo
+export type LinkInfo =
 {
-	header: string;
-	url: string;
-}
+	header: string,
+	url: string,
+};
 
-export interface LinkInfoGroup
+export type LinkInfoGroup =
 {
-	header: string;
-	links: LinkInfo[];
-}
+	header: string,
+	links: LinkInfo[],
+};
 
 
 export function createLinkInfoGroupsFromObject(o: { [key: string]: LinkInfo[] })
