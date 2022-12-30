@@ -12,19 +12,14 @@ export function HomePage(): JSX.Element
 	return (
 		<Page title="" >
 
-			<HTMLComment>Hero section</HTMLComment>
 			<HeroSection/>
 
-			<HTMLComment>Offers section</HTMLComment>
 			<OffersSection/>
 
-			<HTMLComment>Top categories section</HTMLComment>
 			<TopProductCategoriesSection/>
 
-			<HTMLComment>Popular brands section</HTMLComment>
 			<TopBrandsSection/>
 
-			<HTMLComment>Services section</HTMLComment>
 			<AdvantagesSection />
 
 		</Page>

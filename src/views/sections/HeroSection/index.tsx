@@ -73,7 +73,7 @@ export function HeroSection(): JSX.Element
 			</OverlappingPanel>
 
 			<HTMLComment> curly overlay </HTMLComment>
-			<CurlyOverlay className="w-screen absolute bottom-0 -mb-1" foreground="var(--base-medium-high)" />
+			<CurlyOverlay className="w-screen h-20 absolute bottom-0 -mb-1" foreground="var(--base-medium-high)" forceUniformScaling={false} />
 
 		</section>
 	);

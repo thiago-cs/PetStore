@@ -21,10 +21,10 @@ export function favoriteProductsComparison(a: Product, b: Product): number
 		 : 1;
 }
 
-export function filterProducts(products: Product[] | undefined, ...criteriaList: ProductTag[][]): Product[] | undefined
+export function filterProducts(products: Product[] | null, ...criteriaList: ProductTag[][]): Product[] | null
 {
-	if (products === undefined)
-		return undefined;
+	if (products === null)
+		return null;
 
 	for (const criteria of criteriaList)
 		if (criteria !== undefined && criteria.length !== 0)

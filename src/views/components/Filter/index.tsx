@@ -6,7 +6,7 @@ export function Filter<T>(props: FilterProps<T>): JSX.Element
 	const { className, itemsSource, allowMultiselect, selectedItems, selectedItemsChanged } = props;
 
 	return (
-		<ul className={className} >
+		<menu className={className} >
 		{
 			itemsSource.map((item, index) =>
 			<li key={index}
@@ -22,7 +22,7 @@ export function Filter<T>(props: FilterProps<T>): JSX.Element
 
 			</li>)
 		}
-		</ul>
+		</menu>
 	);
 
 

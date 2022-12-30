@@ -1,39 +1,78 @@
-import { Product } from "@/models/Product";
+import { Status, useAxios } from "@/utils/useAxios";
+
+import { Product, filterProducts } from "@/models/Product";
+import { ProductTag } from "@/models/ProductTag";
 import { Filter, FilterProps } from "@/views/components/Filter";
+import { OverlappingPanel } from "@/views/panels/OverlappingPanel";
 import { DuoToneHeader } from "@/views/components/DuoToneHeader";
 import { ProductListView } from "@/views/components/ProductListView";
+import { LoadingIndicator } from "@/views/components/LoadingIndicator";
+import { api } from "@/api";
+import { isNullOrEmpty } from "@/utils/ArrayHelper";
 
 
 export function BestSellerSection(props: BestSellerSectionProps): JSX.Element
 {
-	const { className = "", products, productIsFavoriteChanged, filters } = props;
+	const state = useAxios(api.getProductsAsync);
+
+	const { className = "", filters } = props;
+
+	const shouldShowFilter = !isNullOrEmpty(filters);
+
+	let products = state.data || state.prevData;
+
+	if (shouldShowFilter)
+		products = filterProducts(state.data || state.prevData, ...filters!.map(filter => filter.selectedItems!));
+
 
 	return (
-		<section className={`px-4 py-8 ${className}`} >
+		<section className={`min-h-[30rem] px-4 py-8 ${className}`} >
 
 			<DuoToneHeader>{["Best", " Seller"]}</DuoToneHeader>
-
-			{ filters && filters.length !== 0 &&
-				<ul className="pt-8 flex-row items-center justify-center flex-wrap gap-8" >
+			{
+				shouldShowFilter &&
+				<ul className="my-8 flex-row items-center justify-center flex-wrap gap-8" >
 				{
-					filters.map((props, index) =><li key={index} ><Filter {...props} /></li>)
+					filters!.map((props, index) =><li key={index} ><Filter {...props} /></li>)
 				}
 				</ul>
 			}
 
-			<ProductListView products={products} productIsFavoriteChanged={productIsFavoriteChanged} />
+			<OverlappingPanel>
+			{
+				state.status === Status.Error
+				?
+					<div className="m-20 flex-row justify-center">
+						Sorry, we could not load the list of best selling products.
+						{ state.errorMessage }
+					</div>
+				:
+				products !== null &&
+					<ProductListView products={products}
+									 productIsFavoriteChanged={onProductIsFavoriteChanged} />
+			}
+			{
+				state.status === Status.Loading &&
+				<div className="m-20 flex-row justify-center">
+					<LoadingIndicator />
+				</div>
+			}
+
+			</OverlappingPanel>
 
 		</section>
 	);
+
+
+	function onProductIsFavoriteChanged(_product: Product): void
+	{
+		// throw new Error("Function not implemented.");
+	}
 }
 
 
 interface BestSellerSectionProps
 {
 	className?: string;
-
-	products: Product[] | undefined;
-	productIsFavoriteChanged: (product: Product) => void;
-
-	filters?: FilterProps<any>[];
+	filters?: FilterProps<ProductTag>[];
 }

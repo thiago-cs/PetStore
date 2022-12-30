@@ -8,14 +8,10 @@ export function ProductListView(props: ProductListViewProps): JSX.Element
 	const { products, productIsFavoriteChanged } = props;
 	
 
-	return products === undefined ?
-		<Loading1/>
-
-		: products.length === 0 ?
+	return products.length === 0 ?
 		<div className="p-10 text-2xl text-center" >
 			No items found.	
 		</div>
-
 		:
 		<ul className="pt-10 grid grid-flow-row grid-cols-2 md:grid-cols-3 xl:grid-cols-[repeat(auto-fill,minmax(0,20rem))]
 					   place-content-center gap-x-4 gap-y-6 xl:gap-y-12" >
@@ -31,7 +27,7 @@ export function ProductListView(props: ProductListViewProps): JSX.Element
 
 interface ProductListViewProps
 {
-	products: Product[] | undefined;
+	products: Product[];
 	productIsFavoriteChanged: (product: Product) => void;
 }
 

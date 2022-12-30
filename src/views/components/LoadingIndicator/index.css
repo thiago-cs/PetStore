@@ -33,13 +33,13 @@
 
 @keyframes loading-1-animation
 {
-    0.0% { opacity: 0; }
-   12.5% { opacity: calc(var(--opacity-1,0) ); }
-   25.0% { opacity: calc(var(--opacity-1,0) + var(--opacity-2,0) ); }
-   37.5% { opacity: calc(var(--opacity-1,0) + var(--opacity-2,0) + var(--opacity-3,0) ); }
-   50.0% { opacity: calc(var(--opacity-1,0) + var(--opacity-2,0) + var(--opacity-3,0) + var(--opacity-4,0) ); }
-   62.5% { opacity: calc(var(--opacity-1,0) + var(--opacity-2,0) + var(--opacity-3,0) + var(--opacity-4,0) + var(--opacity-5,0) ); }
-   75.0% { opacity: calc(var(--opacity-1,0) + var(--opacity-2,0) + var(--opacity-3,0) + var(--opacity-4,0) + var(--opacity-5,0) + var(--opacity-6,0) ); }
-   87.5% { opacity: 1; }
-   92.0% { opacity: 0; }
+	 0.0% { opacity: 0; }
+	12.5% { opacity: calc(var(--opacity-1,0) ); }
+	25.0% { opacity: calc(var(--opacity-1,0) + var(--opacity-2,0) ); }
+	37.5% { opacity: calc(var(--opacity-1,0) + var(--opacity-2,0) + var(--opacity-3,0) ); }
+	50.0% { opacity: calc(var(--opacity-1,0) + var(--opacity-2,0) + var(--opacity-3,0) + var(--opacity-4,0) ); }
+	62.5% { opacity: calc(var(--opacity-1,0) + var(--opacity-2,0) + var(--opacity-3,0) + var(--opacity-4,0) + var(--opacity-5,0) ); }
+	75.0% { opacity: calc(var(--opacity-1,0) + var(--opacity-2,0) + var(--opacity-3,0) + var(--opacity-4,0) + var(--opacity-5,0) + var(--opacity-6,0) ); }
+	87.5% { opacity: 1; }
+	92.0% { opacity: 0; }
 }

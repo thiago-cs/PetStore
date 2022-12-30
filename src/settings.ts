@@ -35,11 +35,11 @@ const header =
 
 const topCategories: ProductCategory[] =
 [
-	{ header: "Cat food", url: "/shop?category=202&for=101", image: Category1Image, },
-	{ header: "Cat toys", url: "/shop?category=201&for=101", image: Category2Image, },
-	{ header: "Dog food", url: "/shop?category=202&for=102", image: Category3Image, },
-	{ header: "Dog toys", url: "/shop?category=201&for=102", image: Category4Image, },
-	{ header: "Dog supplements", url: "/shop?category=203&for=102", image: Category5Image, },
+	{ header: "Cat food", url: "/shop?for=😺&category=🌮", image: Category1Image, },
+	{ header: "Cat toys", url: "/shop?for=😺&category=🪀", image: Category2Image, },
+	{ header: "Dog food", url: "/shop?for=🐶&category=🌮", image: Category3Image, },
+	{ header: "Dog toys", url: "/shop?for=🐶&category=🪀", image: Category4Image, },
+	{ header: "Dog supplements", url: "/shop?for=🐶&category=💊", image: Category5Image, },
 ];
 
 const footerLinks: { [header: string]: LinkInfo[] } =
@@ -73,6 +73,12 @@ const footerLinks: { [header: string]: LinkInfo[] } =
 	],
 };
 
+const api =
+{
+	url: new URL(import.meta.url).origin,
+	basePath: "/api",
+};
+
 const attributions =
 [
 	{ content: "Pet Shop Vectors by Vecteezy", url: "https://www.vecteezy.com/free-vector/pet-shop", },
@@ -80,4 +86,4 @@ const attributions =
 ];
 
 
-export const settings = { companyInfo, pages, header, topCategories, footerLinks, attributions, };
+export const settings = { companyInfo, pages, header, topCategories, footerLinks, api, attributions, };

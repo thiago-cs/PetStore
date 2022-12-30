@@ -2,40 +2,9 @@ import { Brand } from "@/models/Brand";
 import { Offer } from "@/models/Offer";
 import { Product } from "@/models/Product";
 import { ProductTag } from "@/models/ProductTag";
-import { sleep } from "@/utils/sleep";
 
 
-/**
- * This is a mock-up that simulates an API backend.
- * A few hacks here and there are exceptionally allowed here.
- */
-
-export const myApi =
-{
-	async getProductsAsync(): Promise<Product[]>
-	{
-		await sleep(1500);
-
-		return products;
-	},
-
-	async getTopBrandsAsync(): Promise<Brand[]>
-	{
-		await sleep(1500);
-
-		return brands.slice(0, 5);
-	},
-
-	async getOffersAsync(): Promise<Offer[]>
-	{
-		await sleep(1500);
-
-		return offers;
-	},
-};
-
-
-const products: Product[] =
+export const products: Product[] =
 [
 	{
 		id: "p001",
@@ -127,7 +96,7 @@ const products: Product[] =
 	},
 ];
 
-const brands: Brand[] =
+export const brands: Brand[] =
 [
 	{ header: "", url: "", image: "brands/brand-1.jpg", },
 	{ header: "", url: "", image: "brands/brand-2.jpg", },
@@ -136,7 +105,7 @@ const brands: Brand[] =
 	{ header: "", url: "", image: "brands/brand-5.jpg", },
 ];
 
-const offers: Offer[] =
+export const offers: Offer[] =
 [
 	{
 		header: "Selected Items. Online Only.",
@@ -159,6 +128,7 @@ const offers: Offer[] =
 ];
 
 
+// A few hacks here and there are exceptionally allowed in this file.
 prefixAllImageUrl();
 
 function prefixAllImageUrl(): void

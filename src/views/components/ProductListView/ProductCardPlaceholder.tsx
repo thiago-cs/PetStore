@@ -40,8 +40,8 @@ export function ProductCardPlaceholder(): JSX.Element
 const ContentLoaderStyleProps =
 {
 	speed: 2,
-    backgroundColor: "var(--base-medium-low)",
-    foregroundColor: "var(--base-medium)",
+	backgroundColor: "var(--base-medium-low)",
+	foregroundColor: "var(--base-medium)",
 };
 
 
