@@ -1,8 +1,9 @@
-import axios, { CreateAxiosDefaults } from "axios";
+import axios, { AxiosResponse, CreateAxiosDefaults } from "axios";
 
-import { Product } from "@/models/Product";
-import { Offer } from "@/models/Offer";
-import { Brand } from "@/models/Brand";
+import { Product, validateProducts } from "@/models/Product";
+import { Offer, validateOffers } from "@/models/Offer";
+import { Brand, validateBrands } from "@/models/Brand";
+import { Response, ResponseStatus } from "./Response";
 import { settings } from "@/settings";
 
 
@@ -10,7 +11,12 @@ export const api =
 {
 	async getProductsAsync()
 	{
-		const response = await httpClient.get<Product[]>("products");
+		const axiosResponse = await httpClient.get<Product[]>("products");
+		const response = createApiResponse(axiosResponse);
+
+		if (response.data !== null)
+			response.data = validateProducts(response.data);
+
 		return response;
 	},
 
@@ -21,7 +27,13 @@ export const api =
 
 	async getTopBrandsAsync()
 	{
-		return await httpClient.get<Brand[]>("brands");
+		const axiosResponse = await httpClient.get<Brand[]>("brands");
+		const response = createApiResponse(axiosResponse);
+
+		if (response.data!== null)
+			response.data = validateBrands(response.data);
+
+		return response;
 	},
 
 	async getBrandAsync(id: string)
@@ -31,7 +43,13 @@ export const api =
 
 	async getOffersAsync()
 	{
-		return await httpClient.get<Offer[]>("offers");
+		const axiosResponse = await httpClient.get<Offer[]>("offers");
+		const response = createApiResponse(axiosResponse);
+
+		if (response.data!== null)
+			response.data = validateOffers(response.data);
+
+		return response;
 	},
 
 	async getOfferAsync(id: string)
@@ -48,3 +66,11 @@ const config: CreateAxiosDefaults<any> =
 };
 
 const httpClient = axios.create(config);
+
+
+function createApiResponse<T>(axiosResponse: AxiosResponse<T>): Response<T>
+{
+	return axiosResponse.status === 200
+		 ? { status: ResponseStatus.Success, data: axiosResponse.data, prevData: null, errorMessage: null }
+		 : { status: ResponseStatus.Error, data: null, prevData: null, errorMessage: `${axiosResponse.status} ${axiosResponse.statusText}` };
+}

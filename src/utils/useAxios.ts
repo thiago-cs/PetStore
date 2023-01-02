@@ -1,35 +1,21 @@
 import { useState, useEffect } from "react";
 import { AxiosResponse } from "axios";
 
+import { Response, ResponseStatus } from "@/api/Response";
 
-export enum Status
+
+const initialState: Response<any> =
 {
-	Loading,
-	Success,
-	Error,
-}
-
-type State<T> =
-{
-	status: Status,
-	data: T | null,
-	prevData: T | null,
-	errorMessage: string | null,
-};
-
-
-const initialState: State<any> =
-{
-	status: Status.Loading,
+	status: ResponseStatus.Loading,
 	data: null,
 	prevData: null,
 	errorMessage: null,
 };
 
 
-export function useAxios<T>(getItems: ()=>Promise<AxiosResponse<T, any>>): State<T>
+export function useAxios<T>(getItems: ()=>Promise<Response<T>>): Response<T>
 {
-	const [state, setState] = useState(initialState as State<T>);
+	const [state, setState] = useState(initialState as Response<T>);
 
 	useEffect(() => { fetchItems(); }, [getItems]);
 
@@ -40,11 +26,7 @@ export function useAxios<T>(getItems: ()=>Promise<AxiosResponse<T, any>>): State
 	{
 		const response = await getItems();
 
-		const newState = response.status === 200
-					   ? { status: Status.Success, data: response.data, errorMessage: null }
-					   : { status: Status.Error, data: null, errorMessage: createErrorMessage(response) };
-
-		setState(oldState => ({ ...newState, prevData: oldState.data }));
+		setState(oldState => ({ ...response, prevData: oldState.data }));
 	}
 }
 

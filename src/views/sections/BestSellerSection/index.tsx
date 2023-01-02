@@ -1,4 +1,5 @@
-import { Status, useAxios } from "@/utils/useAxios";
+import { useAxios } from "@/utils/useAxios";
+import { ResponseStatus } from "@/api/Response";
 
 import { Product, filterProducts } from "@/models/Product";
 import { ProductTag } from "@/models/ProductTag";
@@ -40,7 +41,7 @@ export function BestSellerSection(props: BestSellerSectionProps): JSX.Element
 
 			<OverlappingPanel>
 			{
-				state.status === Status.Error
+				state.status === ResponseStatus.Error
 				?
 					<div className="m-20 flex-row justify-center">
 						Sorry, we could not load the list of best selling products.
@@ -52,7 +53,7 @@ export function BestSellerSection(props: BestSellerSectionProps): JSX.Element
 									 productIsFavoriteChanged={onProductIsFavoriteChanged} />
 			}
 			{
-				state.status === Status.Loading &&
+				state.status === ResponseStatus.Loading &&
 				<div className="m-20 flex-row justify-center">
 					<LoadingIndicator />
 				</div>
