@@ -5,8 +5,9 @@ import { PageHeader } from "@/views/components/PageHeader";
 import { PageFooter } from "@/views/components/PageFooter";
 import { PageSizeIndicator } from "@/views/devComponents/PageSizeIndicator";
 import { useScrollToTopEffect } from "@/utils/useScrollToTopEffect";
-import { settings } from "@/settings";
 import { ShoppingCartProvider } from "@/context/ShoppingCartContext";
+import { RenderFallbackProvider } from "@/context/RenderFallbackContext";
+import { settings } from "@/settings";
 
 
 const footerLinkGroups = createLinkInfoGroupsFromObject(settings.footerLinks);
@@ -23,12 +24,13 @@ export function AppShell(): JSX.Element
 						pages={settings.pages}
 						iconSize={settings.header.iconSize} />
 
-			<Outlet />
+			<RenderFallbackProvider>
+				<Outlet />
+			</RenderFallbackProvider>
 
 			<PageFooter linkGroups={footerLinkGroups} />
 
 			<PageSizeIndicator className="fixed bottom-4 right-4 z-50" />
 		</ShoppingCartProvider>
 	);
-
 }

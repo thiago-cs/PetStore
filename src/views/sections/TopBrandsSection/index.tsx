@@ -31,13 +31,16 @@ function BrandList(): JSX.Element
 	return <>
 		<DuoToneHeader>{[ "Popular", " Brands" ]}</DuoToneHeader>
 
-		<Carousel className="md:hidden mt-16" height="12rem" mx="auto" px="4rem"
-				  slideSize="auto" slideGap="sm" includeGapInSize loop align="center"
-				  breakpoints={carouselBreakpoints} styles={carouselStyle} >
 		{
-			brands.map((item, index) => <Carousel.Slide key={index} ><BrandCard brand={item} /></Carousel.Slide>)
+			brands.length !== 0 &&
+			<Carousel className="md:hidden" height="12rem" mx="auto" px="4rem" mt="lg"
+					slideSize="auto" slideGap="sm" includeGapInSize loop align="center"
+					breakpoints={carouselBreakpoints} styles={carouselStyle} >
+			{
+				brands.map((item, index) => <Carousel.Slide key={index} ><BrandCard brand={item} /></Carousel.Slide>)
+			}
+			</Carousel>
 		}
-		</Carousel>
 
 		<ul className="mt-16 px-[3%] hidden md:flex xl:flex-row justify-around gap-[3%]" >
 		{

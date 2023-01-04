@@ -1,7 +1,8 @@
 import { ProductTag } from "@/models/ProductTag";
-import { Page } from "../Page";
+import { Page } from "@/views/pages/Page";
 import { BestSellerSection } from "@/views/sections/BestSellerSection";
 import { FilterCriterion } from "@/views/components/Filter/FilterCriterion";
+import { ErrorBoundary } from "@/views/devComponents/ErrorBoundary";
 import { Cat, Dog, Bird, Fish, PetFood, PetToy, PetMedicine } from "@/views/icons";
 import { FilterParam, useFilterSearchParam } from "@/utils/useFilterSearchParams";
 
@@ -19,7 +20,9 @@ export function ShopPage(): JSX.Element
 
 	return (
 		<Page title="Shop" className="pt-16 lg:px-16" >
-			<BestSellerSection filters={filters} />
+			<ErrorBoundary>
+				<BestSellerSection filters={filters} />
+			</ErrorBoundary>
 		</Page>
 	);
 }
