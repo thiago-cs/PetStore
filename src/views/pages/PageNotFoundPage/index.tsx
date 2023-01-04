@@ -1,7 +1,7 @@
 import { Page } from "../Page";
 
 
-export function NotFoundPage(): JSX.Element
+export function PageNotFoundPage(): JSX.Element
 {
 	return (
 		<Page title="Not Found" className="min-h-[50vh] pt-20 flex-row justify-center items-center" >

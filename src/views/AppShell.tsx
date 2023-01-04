@@ -21,7 +21,7 @@ export function AppShell(): JSX.Element
 		<ShoppingCartProvider>
 			<PageHeader companyName={settings.companyInfo.name}
 						logoPath={settings.companyInfo.logo}
-						pages={settings.pages}
+						pages={settings.pages.filter(page => page.showInNavigationBar)}
 						iconSize={settings.header.iconSize} />
 
 			<RenderFallbackProvider>

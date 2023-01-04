@@ -1,5 +1,4 @@
-// cSpell:ignore Kitter, Petco, Pataskala, Vecteezy
-
+import { PageData } from "@/models/PageData";
 import { LinkInfo } from "@/models/LinkInfo";
 import { ProductCategory } from "@/models/ProductCategory";
 
@@ -20,12 +19,44 @@ const companyInfo =
 	landline: "(+1)-6234-56-789-1011",
 };
 
-const pages =
+const pages: PageData[] =
 [
-	{ title: "Home", url: "/" },
-	{ title: "Shop", url: "/shop" },
-	{ title: "Blogs", url: "/blogs" },
-	{ title: "Contact", url: "/contact" },
+	{
+		title: "Home",
+		path: "/" ,
+		componentName: "HomePage",
+		showInNavigationBar: true,
+	},
+	{
+		title: "Shop",
+		path: "/shop",
+		componentName: "ShopPage",
+		showInNavigationBar: true,
+	},
+	{
+		title: "Blogs",
+		path: "/blogs",
+		componentName: "ContactPage",
+		showInNavigationBar: true,
+	},
+	{
+		title: "Contact",
+		path: "/contact",
+		componentName: "ContactPage",
+		showInNavigationBar: true,
+	},
+	{
+		title: "Sign in",
+		path: "/signIn",
+		componentName: "SignInPage",
+		showInNavigationBar: false,
+	},
+	{
+		title: "Not found",
+		path: "*",
+		componentName: "PageNotFoundPage",
+		showInNavigationBar: false,
+	},
 ];
 
 const header =

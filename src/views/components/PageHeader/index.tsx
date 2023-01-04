@@ -12,6 +12,7 @@ import { InfoBadge } from "@/views/components/InfoBadge";
 import { HTMLComment } from "@/views/devComponents/HTMLComment";
 import { Search, User, Shop, } from "@/views/icons";
 import { useToggle } from "@/utils/useToggle";
+import { PageData } from "@/models/PageData";
 
 
 
@@ -78,8 +79,8 @@ export function PageHeader(props: PageHeaderProps): JSX.Element
 									  className="p-3 rounded text-md font-semibold underline-offset-[1ex]
 									  			 lg:px-0 lg:py-1 hover:bg-zinc-500/10 lg:hover:bg-transparent"
 									  title={item.title}
-									  to={item.url}
-									  isActive={item.url === currentPath}
+									  to={item.path}
+									  isActive={item.path === currentPath}
 									  onClick={dismissFlyout} />)
 					}
 					</nav>
@@ -138,6 +139,6 @@ type PageHeaderProps =
 {
 	logoPath?: string,
 	companyName: string | null,
-	pages: { title: string, url: string }[],
+	pages: Pick<PageData, "title" | "path">[],
 	iconSize: number,
 };

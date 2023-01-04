@@ -1,14 +1,10 @@
 import { HashRouter, Route, Routes } from "react-router-dom";
 
+import { routes } from "@/routes";
 import { AppShell } from "@/views/AppShell";
-import { HomePage } from "@/views/pages/HomePage";
-import { ShopPage } from "@/views/pages/ShopPage";
-import { ContactPage } from "@/views/pages/ContactPage";
-import { SignInPage } from "@/views/pages/SignInPage";
-import { NotFoundPage } from "@/views/pages/PageNotFoundPage";
 
-import "./Themes/palette.css";
-import "./App.css";
+import "@/Themes/palette.css";
+import "@/App.css";
 
 
 export function App()
@@ -17,11 +13,10 @@ export function App()
 		<HashRouter>
 			<Routes>
 				<Route path="/" element={<AppShell />} >
-					<Route index          element={<HomePage />} />
-					<Route path="shop"    element={<ShopPage />} />
-					<Route path="contact" element={<ContactPage />} />
-					<Route path="signIn"  element={<SignInPage />} />
-					<Route path="*"       element={<NotFoundPage />} />
+				{
+					routes.map(({ path, component: Component }) =>
+						<Route key={path} path={path} element={<Component />} />)
+				}
 				</Route>
 			</Routes>
 		</HashRouter>

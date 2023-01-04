@@ -1,6 +1,5 @@
-import { NavLink } from "react-router-dom";
-
 import { Action } from "@/models/Action";
+import { LinkWithPreload } from "@/views/components/LinkWithPreload";
 
 
 export function PageLink(props: PageLinkProps): JSX.Element
@@ -15,11 +14,11 @@ export function PageLink(props: PageLinkProps): JSX.Element
 			{ title }
 		</span>
 		:
-		<NavLink className={"cursor-pointer opacity-80 hover:opacity-100 focus:opacity-100 transition-opacity duration-100 " + className}
-				 to={to}
-				 onClick={onClick} >
+		<LinkWithPreload className={`cursor-pointer opacity-80 hover:opacity-100 focus:opacity-100 transition-opacity duration-100 ${className}`}
+						 to={to}
+						 onClick={onClick} >
 			{ title }
-		</NavLink>;
+		</LinkWithPreload>;
 }
 
 
